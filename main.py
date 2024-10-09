@@ -1,6 +1,8 @@
 from chickenDiseaseClassifier import logger
 from chickenDiseaseClassifier.pipeline.stage_01_data_ingestion import DataIngestionTrainingPipeline
 from chickenDiseaseClassifier.pipeline.stage_02_prepare_base_model import PrepareBaseModelTrainingPipeline
+from chickenDiseaseClassifier.pipeline.stage_03_training import TrainingPipeline
+
 
 STAGE_NAME = "Data Ingestion stage"
 try:
@@ -12,6 +14,7 @@ except Exception as e:
     logger.exception(e)
     raise e
 
+
 STAGE_NAME = "Prepare base model stage"
 try:
     logger.info("*****************************")
@@ -19,6 +22,17 @@ try:
     obj = PrepareBaseModelTrainingPipeline()
     obj.main()
     logger.info(f">>>>>>> stage {STAGE_NAME} completed")
+except Exception as e:
+    logger.exception(e)
+    raise e
+
+try:
+    STAGE_NAME = "Training stage"
+    logger.info("*****************************")
+    logger.info(f">>>>>>> stage {STAGE_NAME} started <<<<<<<")
+    # obj = TrainingPipeline()
+    # obj.main()
+    logger.info(f">>>>>>> stage {STAGE_NAME} completed <<<<<<<")
 except Exception as e:
     logger.exception(e)
     raise e
