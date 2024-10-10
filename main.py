@@ -31,8 +31,8 @@ STAGE_NAME = "Training stage"
 try:
     logger.info("*****************************")
     logger.info(f">>>>>>> stage {STAGE_NAME} started <<<<<<<")
-    # obj = TrainingPipeline()
-    # obj.main()
+    obj = TrainingPipeline()
+    obj.main()
     logger.info(f">>>>>>> stage {STAGE_NAME} completed <<<<<<<")
 except Exception as e:
     logger.exception(e)
