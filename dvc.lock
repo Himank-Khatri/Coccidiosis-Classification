@@ -1,13 +1,13 @@
 schema: '2.0'
 stages:
   data_ingestion:
-    cmd: python src/chickenDiseaseClassifier/pipeline/stage_01_data_ingestion.py
+    cmd: python src/cnnClassifier/pipeline/stage_01_data_ingestion.py
     deps:
     - path: config/config.yaml
       hash: md5
       md5: 01ce4cebc180985c834114e960e1696c
       size: 784
-    - path: src/chickenDiseaseClassifier/pipeline/stage_01_data_ingestion.py
+    - path: src/cnnClassifier/pipeline/stage_01_data_ingestion.py
       hash: md5
       md5: cdda0a29f6b0d2627e5bd801b98b1849
       size: 926
@@ -18,13 +18,13 @@ stages:
       size: 12207807
       nfiles: 390
   prepare_base_model:
-    cmd: python src/chickenDiseaseClassifier/pipeline/stage_02_prepare_base_model.py
+    cmd: python src/cnnClassifier/pipeline/stage_02_prepare_base_model.py
     deps:
     - path: config/config.yaml
       hash: md5
       md5: 01ce4cebc180985c834114e960e1696c
       size: 784
-    - path: src/chickenDiseaseClassifier/pipeline/stage_02_prepare_base_model.py
+    - path: src/cnnClassifier/pipeline/stage_02_prepare_base_model.py
       hash: md5
       md5: ff07dc5fefce93c68ee24437868f3b5b
       size: 1025
@@ -45,7 +45,7 @@ stages:
       size: 118059248
       nfiles: 2
   training:
-    cmd: python src/chickenDiseaseClassifier/pipeline/stage_03_training.py
+    cmd: python src/cnnClassifier/pipeline/stage_03_training.py
     deps:
     - path: artifacts/data_ingestion/Chicken-fecal-images
       hash: md5
@@ -61,11 +61,11 @@ stages:
       hash: md5
       md5: 01ce4cebc180985c834114e960e1696c
       size: 784
-    - path: src/chickenDiseaseClassifier/components/prepare_callbacks.py
+    - path: src/cnnClassifier/components/prepare_callbacks.py
       hash: md5
       md5: 1beab9c3e48d55bddfa200435784368a
       size: 946
-    - path: src/chickenDiseaseClassifier/pipeline/stage_03_training.py
+    - path: src/cnnClassifier/pipeline/stage_03_training.py
       hash: md5
       md5: f77cb6bc6ea2d606b8fd107de4b2ed64
       size: 1244
@@ -84,7 +84,7 @@ stages:
       md5: 26c47279d8745cd7971e024a206cbe60
       size: 59340720
   evaluation:
-    cmd: python src/chickenDiseaseClassifier/pipeline/stage_04_evaluation.py
+    cmd: python src/cnnClassifier/pipeline/stage_04_evaluation.py
     deps:
     - path: artifacts/data_ingestion/Chicken-fecal-images
       hash: md5
@@ -99,7 +99,7 @@ stages:
       hash: md5
       md5: 01ce4cebc180985c834114e960e1696c
       size: 784
-    - path: src/chickenDiseaseClassifier/pipeline/stage_04_evaluation.py
+    - path: src/cnnClassifier/pipeline/stage_04_evaluation.py
       hash: md5
       md5: b52531cc519ffcd8a6f135a1d33d7ec2
       size: 872

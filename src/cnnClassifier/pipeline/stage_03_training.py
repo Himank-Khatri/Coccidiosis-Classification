@@ -1,7 +1,7 @@
-from chickenDiseaseClassifier.config.configuration import ConfigurationManager
-from chickenDiseaseClassifier.components.training import Training
-from chickenDiseaseClassifier.components.prepare_callbacks import PrepareCallback
-from chickenDiseaseClassifier import logger
+from cnnClassifier.config.configuration import ConfigurationManager
+from cnnClassifier.components.training import Training
+from cnnClassifier.components.prepare_callbacks import PrepareCallback
+from cnnClassifier import logger
 
 class TrainingPipeline:
     def __init__(self):

@@ -1,5 +1,5 @@
 import tensorflow as tf
-from chickenDiseaseClassifier.entity.config_entity import PrepareBaseModelConfig
+from cnnClassifier.entity.config_entity import PrepareBaseModelConfig
 from pathlib import Path
 
 class PrepareBaseModel:

@@ -1,5 +1,5 @@
 import os
-from chickenDiseaseClassifier.entity.config_entity import PrepareCallbacksConfig
+from cnnClassifier.entity.config_entity import PrepareCallbacksConfig
 import time
 import tensorflow as tf
 
